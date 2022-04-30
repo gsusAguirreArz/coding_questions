@@ -68,14 +68,17 @@ std::vector<int> spiralTraverse( Matrix M ){
 
     while ( i < n && j < m ){
 
+        // Right displacement i -> constant,  j -> j++
         for ( k = j; k < m; ++k )
             res.push_back( M[i][k] );
         i++;
 
+        // Down displacement i -> i++  j -> cte
         for ( k = i; k < n; ++k )
             res.push_back( M[k][m-1] );
         m--;
 
+        
         if ( i < n ){
             for ( k = m - 1; k >= j; --k )
                 res.push_back( M[n-1][k] );
